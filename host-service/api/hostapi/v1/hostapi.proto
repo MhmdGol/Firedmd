@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package hostapi.v1;
+
+service HostService {
+    rpc CreateListing(CreateListingRequest) returns (CreateListingResponse);
+    rpc DeleteListing(DeleteListingRequest) returns (DeleteListingResponse);
+}
+
+message CreateListingRequest {
+    string host_id = 1;
+    string property_id = 2;
+    string price = 3;
+}
+
+message CreateListingResponse {}
+
+message DeleteListingRequest {
+    string listing_id = 1;
+}
+message DeleteListingResponse {}
